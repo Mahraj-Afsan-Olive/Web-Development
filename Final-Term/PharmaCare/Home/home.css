@@ -1,0 +1,110 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+/* Top-right Navigation */
+.nav-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background: white;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: #0056b3;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    background: url('home.png') no-repeat center center/cover;
+    padding: 80px 20px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.learn-more-btn {
+    background: #24127d;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.learn-more-btn:hover {
+    background: #7862c9;
+}
+
+/* Content Sections */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
