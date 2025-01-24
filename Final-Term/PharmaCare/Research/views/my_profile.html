@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <header>
+        <h1>My Profile</h1>
+    </header>
+
+    <section>
+      
+        <script>
+            // Function to show an alert
+            function showAlert(message, type) {
+                if (type === 'success') {
+                    alert(message);
+                } else {
+                    alert('Error: ' + message);
+                }
+            }
+
+            // Check for 'status' or 'error' in the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const error = urlParams.get('error');
+
+            // If status is 'success', show success alert
+            if (status === 'success') {
+                showAlert('Researcher profile created successfully!', 'success');
+            }
+
+            // If there's an error, show error alert
+            if (error) {
+                showAlert(error, 'error');
+            }
+            
+        </script>
+
+        <!-- Form to create a researcher profile -->
+        <h2>Create Researcher Profile</h2>
+        <form id="createForm" method="POST" action="../php/process.php">
+            <input type="text" name="researcher_name" id="researcher_name" placeholder="Researcher Name" required>
+            <input type="text" name="research_name" id="research_name" placeholder="Research Name" required>
+            <input type="text" name="researcher_id" id="researcher_id" placeholder="Researcher ID" required>
+            <button type="submit" name="create">Create</button>
+        </form>
+
+        <hr>
+
+        <!-- Search for a researcher profile -->
+        <h2>Search Researcher Profile</h2>
+        <input  type="text" id="searchQuery" placeholder="Search by Researcher Name" onkeyup="searchProfile()">
+
+        <h3>List of Researchers</h3>
+        <ul id="profileList"></ul>
+
+        <hr>
+
+        <!-- List of all researchers
+        <h3>List of Researchers</h3>
+        <ul id="researcherList"></ul> -->
+        
+<script>
+    // Fetch researchers
+    fetch('../php/search.php')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('researcherList').innerHTML = data;
+    })
+    .catch(error => console.error('Error:', error));
+</script>
+
+        <a href="../index.html">Back to Home</a>
+    </section>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

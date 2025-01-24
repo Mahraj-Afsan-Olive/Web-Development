@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Data</title>
+    <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+    <header>
+        <h1>Project Data</h1>
+    </header>
+
+    <section>
+        <!-- Search Form -->
+        <h3>Search Projects</h3>
+        <form id="searchForm">
+            <input type="text" id="search_query" placeholder="Enter team name or researcher name" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="search_results"></div>
+
+        <!-- Project Creation Form -->
+        <form action="../php/project.php" method="POST">
+            <h3>Create a Project</h3>
+
+            <label for="project_type">Select Project Type:</label><br>
+            <select name="project_type" id="project_type">
+                <option value="team">Team</option>
+                <option value="researcher">Researcher</option>
+            </select><br><br>
+
+            <div id="team_fields">
+                <label for="team_name">Team Name:</label><br>
+                <input type="text" name="team_name" id="team_name"><br><br>
+                <label for="project_name">Project Name:</label><br>
+                <input type="text" name="project_name" id="project_name"><br><br>
+            </div>
+
+            
+
+            <input type="submit" value="Create Project">
+        </form>
+
+        <a href="../index.html">Back to Home</a>
+    </section>
+
+    <script>
+        // Handle form submission and search
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            let searchQuery = document.getElementById('search_query').value;
+
+            // Perform a fetch request to get search results
+            fetch(`../php/project.php?search_query=${encodeURIComponent(searchQuery)}`)
+                .then(response => response.json()) 
+                .then(data => {
+                    const searchResultsDiv = document.getElementById('search_results');
+                    searchResultsDiv.innerHTML = ''; 
+
+                    if (data.length > 0) {
+                        let ul = document.createElement('ul');
+                        data.forEach(result => {
+                            let li = document.createElement('li');
+                            if (result.team_name) {
+                                li.textContent = `Team: ${result.team_name} - Project: ${result.project_name}`;
+                            }
+                            ul.appendChild(li);
+                        });
+                        searchResultsDiv.appendChild(ul);
+                    } else {
+                        searchResultsDiv.textContent = 'No results found.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching search results:', error);
+                });
+        });
+
+        document.getElementById('project_type').addEventListener('change', function() {
+            var projectType = this.value;
+            if (projectType === 'team') {
+                document.getElementById('team_fields').style.display = 'block';
+                document.getElementById('researcher_fields').style.display = 'none';
+            } else {
+                document.getElementById('team_fields').style.display = 'none';
+                document.getElementById('researcher_fields').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

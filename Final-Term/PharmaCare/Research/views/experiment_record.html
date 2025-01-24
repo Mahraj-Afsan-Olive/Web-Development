@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experimental Records</title>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Experimental Records</h1>
+    </header>
+
+    <section id="project-list">
+      <p>This is the experimental records page.</p>
+      <br />
+      <ul id="projects"></ul>
+      <br />
+      <a href="../index.html">Back to Home</a>
+    </section>
+
+    <script>
+      // Function to delete a project
+    
+      // Function to fetch and display projects
+      function fetchProjects() {
+        fetch("../php/fetch_projects.php")
+          .then((response) => response.json())
+          .then((data) => {
+            const projectList = document.getElementById("projects");
+            projectList.innerHTML = ""; 
+
+            // Check if there are projects to display
+            if (data.length > 0) {
+              data.forEach((project) => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `Project: ${project.project_name} 
+                                                  | Team: ${
+                                                    project.team_name || "N/A"
+                                                  } 
+                                                  `;
+                projectList.appendChild(listItem);
+              });
+            } else {
+              projectList.innerHTML = "<li>No projects found.</li>";
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
+      }
+
+      // Initially fetch and display projects
+      fetchProjects();
+    </script>
+  </body>
+</html>

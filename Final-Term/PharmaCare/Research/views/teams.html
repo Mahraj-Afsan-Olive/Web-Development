@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <link rel="stylesheet" href="../css/team.css"> 
+</head>
+<body>
+    <a href="../index.html" class="back-button">Back to Main Page</a>
+    <div class="container">
+        <h2>Manage Teams</h2>
+
+        <!-- Add Team Form -->
+        <form action="../php/team.php" method="POST">
+            <input type="hidden" name="action" value="add">
+            <label for="team_name">Team Name:</label>
+            <input type="text" id="team_name" name="team_name" required>
+            <label for="members">Members (comma-separated):</label>
+            <input type="text" id="members" name="members" required>
+            <button type="submit">Add Team</button>
+        </form>
+
+        <h3>Search Teams</h3>
+        <!-- Search Team Form -->
+        <form action="../php/team.php" method="POST">
+            <input type="hidden" name="action" value="search">
+            <input type="text" name="search_query" id="searchKeyword" placeholder="Search by team name or members" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <h3>Delete Team</h3>
+        <!-- Delete Team Form -->
+        <form action="../php/team.php" method="POST">
+            <input type="hidden" name="action" value="delete">
+            <label for="delete_team_name">Team Name:</label>
+            <input type="text" id="delete_team_name" name="team_name" placeholder="Enter team name to delete" required>
+            <button type="submit">Delete</button>
+        </form>
+
+        <div id="teamList">
+           
+        </div>
+    </div>
+    <script src="../js/script.js"></script> 
+</body>
+</html>
