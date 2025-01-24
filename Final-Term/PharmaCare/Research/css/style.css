@@ -1,0 +1,96 @@
+/* General reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Header Styling */
+header {
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+
+.home{
+    padding-top: 10px;
+}
+
+h1 {
+    color: #333;
+}
+
+/* Navigation Menu */
+nav {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu li {
+    display: inline;
+    margin: 15px;
+}
+
+
+.btn {
+    display: inline-block;
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Section Styling for each page */
+section {
+    margin: 50px auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+section p {
+    font-size: 18px;
+    color: #333;
+}
+
+section a {
+    margin-top: 20px;
+    display: inline-block;
+    font-size: 18px;
+    color: #3498db;
+}
+
+section a:hover {
+    color: #2980b9;
+}
