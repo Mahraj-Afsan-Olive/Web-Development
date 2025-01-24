@@ -1,0 +1,321 @@
+/*index*/
+
+.header {
+    overflow: hidden;
+    background-color: #C8E4EE;
+    padding: 20px 10px;
+  }
+  
+  /* Style the header links */
+  .header a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+  }
+  
+  /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+  .header a.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #120538;
+  }
+  
+  /* Change the background color on mouse-over */
+  .header a:hover {
+    background-color: bisque;
+    color: black;
+  }
+  
+  /* Style the active/current link*/
+  .header a.active {
+    background-color: dodgerblue;
+    color: white;
+  }
+  
+  /* Float the link section to the right */
+  .header-right {
+    float: right;
+    display: flex;
+    gap: 1px;
+    margin: auto;
+    align-items: center;
+    justify-content: center;;
+  }
+  
+  /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
+  @media screen and (max-width: 500px) {
+    .header a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .header-right {
+      float: none;
+    }
+  }
+
+  .btn-index {
+    border: none;
+    color: white;
+    background-color: #45B4DC;
+    height:50px;
+    width:200px;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+
+  .btn-index:hover,.btn-login:hover,.forgotten_pass:hover
+  {
+    background-color: bisque;
+  }
+
+  .options
+  {
+    background-color: #C8E4EE;
+    margin-top: 20px;
+    justify-items: center;
+  }
+
+
+  /*------------------footer----------------*/
+
+  footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+  /*--------------log in-------------*/
+
+ /*style.css*/
+/*body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+    background: #f3f3f3;
+    flex-direction: column;
+    margin: 0;
+}*/
+
+.main {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    transition: transform 0.2s;
+    width: 500px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+label {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #555;
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.btn-login {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #45B4DC;
+    width: 100%;
+    font-size: 16px;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*--------- My Profile -------*/
+
+.profile-container {
+    background-color: #C8E4EE;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    text-align: left;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.position {
+    font-size: 16px;
+    color: #666;
+}
+
+/*.contact-info, .skills {
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}*/
+
+.contact-info, .skills
+{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li strong {
+    color: #555;
+}
+
+
+
+/*-------------------- Records ------------------*/
+
+.record
+{
+    padding: 40px 10%;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #005f7f;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: #005f7f;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+ul li a {
+    color: #005f7f;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
