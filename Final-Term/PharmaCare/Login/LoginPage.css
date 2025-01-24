@@ -1,0 +1,86 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #358b90, #77d2d1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Box */
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: scale(1.05);
+}
+
+/* Heading */
+h2 {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border 0.3s;
+}
+
+input:focus {
+    border: 2px solid #63cedf;
+    outline: none;
+}
+
+/* Error Message */
+.error {
+    color: rgb(204, 36, 23);
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+/* Submit Button */
+button {
+    background: linear-gradient(135deg, #030d79, #a69acb);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #355a5c, #b5c6ce);
+    transform: scale(1.05);
+}

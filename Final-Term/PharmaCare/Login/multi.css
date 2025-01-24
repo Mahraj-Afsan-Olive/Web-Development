@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Main Container */
+.login-container {
+    background-color: #fff;
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    box-sizing: border-box;
+}
+
+/* Title */
+h1 {
+    font-size: 30px;
+    color: #4CAF50;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Common Button Styles */
+.login-btn {
+    padding: 18px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+}
+
+.login-btn:hover {
+    transform: scale(1.1);  /* Slightly larger on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Add shadow effect */
+}
+
+/* Individual Button Styles */
+.login-btn.admin {
+    background-color: #2196F3;
+    color: white;
+}
+
+.login-btn.admin:hover {
+    background-color: #1976D2;
+}
+
+.login-btn.employee {
+    background-color: #FF5722;
+    color: white;
+}
+
+.login-btn.employee:hover {
+    background-color: #E64A19;
+}
+
+.login-btn.accounts {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.login-btn.accounts:hover {
+    background-color: #388E3C;
+}
+
+.login-btn.researcher {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.login-btn.researcher:hover {
+    background-color: #7B1FA2;
+}
+
+.login-btn.customer {
+    background-color: #FF9800;
+    color: white;
+}
+
+.login-btn.customer:hover {
+    background-color: #FB8C00;
+}
