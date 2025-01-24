@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="showPopup()">
+    <div class="signup-container">
+        <h2>Your Sign In Information, Wait for approval Please!</h2>
+        <p><strong>Name:</strong> <span id="userName"></span></p>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+    </div>
+
+    <script>
+        function showPopup() {
+            alert("Your Sign In request is pending, Wait for the admin approval");
+            
+            // Get query parameters from URL
+            let params = new URLSearchParams(window.location.search);
+            document.getElementById("userName").textContent = params.get("name");
+            document.getElementById("userEmail").textContent = params.get("email");
+        }
+    </script>
+</body>
+</html>

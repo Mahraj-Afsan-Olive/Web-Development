@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Signup</h2>
+        <form id="signupForm" action="welcome.html" method="GET" onsubmit="return validateForm()">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span class="error" id="nameError"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error" id="emailError"></span>
+
+            <label for="password">Set Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let nameError = document.getElementById("nameError");
+            let emailError = document.getElementById("emailError");
+            
+            let nameRegex = /^[A-Za-z\s]+$/; 
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+            
+            let valid = true;
+            nameError.textContent = "";
+            emailError.textContent = "";
+
+            if (!nameRegex.test(name)) {
+                nameError.textContent = "Name can only contain letters.";
+                valid = false;
+            }
+            
+            if (!emailRegex.test(email)) {
+                emailError.textContent = "Invalid email format.";
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+</body>
+</html>
